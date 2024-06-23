@@ -1,0 +1,123 @@
+ol.page_numbers {
+  max-width: 80%;
+  width: fit-content;
+  margin: auto;
+  font-size: 4rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: auto;
+  color: white;
+}
+
+ol.page_numbers > li {
+  box-shadow: inset 0 0 5rem silver;
+  padding: 2rem;
+  line-height: 100%;
+  text-shadow: var(--text-shadow1);
+}
+
+ol.page_numbers > li.active {
+  color: red;
+  box-shadow: inset 0 0 5rem yellow;
+}
+
+table.main {
+  font-size: 3rem;
+  margin: auto;
+  table-layout: fixed;
+  background-color: var(--color5);
+  text-shadow: var(--text-shadow1);
+}
+
+table.half {
+  width: 50%;
+  display: inline-table;
+  border-collapse: separate;
+}
+
+td.content {
+  box-shadow: inset 0 0 1rem black;
+  height: 7rem;
+}
+
+td.content > div {
+  min-width: 100%;
+
+  display: block;
+
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td.content:hover > div {
+  overflow: visible;
+  width: fit-content;
+}
+
+table.half:first-of-type td.content {
+  box-shadow: inset 0 0 3rem black;
+  background-color: orangered;
+}
+
+table.half:last-of-type td.content {
+  box-shadow: inset 0 0 3rem black;
+  background-color: maroon;
+}
+
+table.half:first-of-type {
+  border: 1rem ridge orangered;
+}
+
+table.half:last-of-type {
+  border: 1rem ridge maroon;
+}
+
+table.main thead.main_heading {
+  box-shadow: 0 0 2rem black;
+  height: 7rem;
+}
+
+table.main.summary tr.active {
+  box-shadow: 0 0 2rem black;
+  background-color: yellow;
+  box-shadow: inset 0 0 3rem red;
+  color: red;
+  text-shadow: var(--text-shadow_td);
+}
+
+table.main th.main_header {
+  font-weight: 900;
+  background-color: rgb(50, 50, 50);
+  color: yellow;
+  text-shadow: var(--text-shadow_th);
+  box-shadow: inset 0 0 2rem var(--color1);
+  height: 7rem;
+}
+
+table.main.summary thead.main_heading {
+  position: sticky;
+  top: 0rem;
+  z-index: 10;
+}
+
+table.main.summary tr.active {
+  position: sticky;
+  top: 7rem;
+  z-index: 9;
+}
+
+table.main.detail thead.main_heading {
+  position: sticky;
+  top: 14rem;
+  z-index: 8;
+}
+
+table.main.half.detail {
+  position: sticky;
+  top: 14rem;
+  z-index: 8;
+}

@@ -1,0 +1,12 @@
+.heading {
+  color: var(--color1);
+  font-size: 10rem;
+  font-family: var(--font1);
+  text-shadow: 0 0 0.5rem var(--color2);
+}
+
+.season {
+  background-color: black;
+
+  padding: 1rem;
+}

@@ -3,31 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --font1: "i Ice Map", sans-serif;
+  --text-shadow1: 0 0 0.75rem black;
+  --text-shadow_th: 0 0 1rem red;
+  --text-shadow_td: 0 0 0.75rem orange;
+  --color1: red;
+  --color2: yellow;
+  --color3: orange;
+  --color4: orangered;
+  --color5: rgb(55, 55, 55);
+  --color6: rgb(100, 50, 25);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 1vmin;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 10rem;
+}
+
+h3 {
+  font-size: 5rem;
+  color: var();
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  color: white;
+  text-shadow: var(--text-shadow1);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  text-align: center;
+  padding: 0;
 }

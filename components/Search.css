@@ -1,0 +1,33 @@
+div.searches {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.search_container {
+  font-size: 3rem;
+  position: relative;
+}
+
+input.search {
+  color: black;
+  padding: 0 1rem;
+  border: 1rem ridge goldenrod;
+}
+
+ol.options {
+  border: 1rem ridge goldenrod;
+  max-height: 30rem;
+  overflow: auto;
+  position: absolute;
+  z-index: 11;
+  width: 100%;
+  background-color: red;
+}
+
+ol.options > li {
+  padding: 0.5rem 10%;
+  box-shadow: inset 0 0 1rem black;
+  color: white;
+  text-shadow: var(--text-shadow1);
+}
