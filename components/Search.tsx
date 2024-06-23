@@ -26,8 +26,7 @@ const Search: React.FC<SearchProps> = ({
 
   const handleSearch = (input: string) => {
     const match = options.find(
-      (x: Option) =>
-        x.text.trim().toLowerCase() === input.trim().toLocaleLowerCase()
+      (x: Option) => x.text.trim().toLowerCase() === input.trim().toLowerCase()
     );
     if (input.trim() === "") {
       setSearchText("");
@@ -41,7 +40,7 @@ const Search: React.FC<SearchProps> = ({
       setSearchText(input);
 
       const filteredOptions: Option[] = options.filter((option: Option) =>
-        option.text.trim().toLowerCase().includes(input)
+        option.text.toLowerCase().trim().includes(input.trim().toLowerCase())
       );
 
       setSearchOptions(filteredOptions);
