@@ -14,6 +14,8 @@ import {
 } from "@/lib/types";
 import fs from "fs";
 
+type LeagueType = { league_id: string; name: string };
+
 const getTeamDraftPicks = (
   league: SleeperLeague,
   rosters: SleeperRoster[],
@@ -280,7 +282,7 @@ export async function GET(req: NextRequest) {
       status: 200,
     });
   } catch (error) {
-    console.error("Error fetching standings: ", error);
+    console.error("Error fetching standings: ");
 
     return NextResponse.json(
       { error: "Failed to fetch standings" },
@@ -307,4 +309,18 @@ const getPrevLEAGUE_IDS = async (season: string) => {
   );
 
   console.log({ [parseInt(season) - 1]: { length: prev.length, ids: prev } });
+};
+
+const getLEAGUE_IDS = async (season: string) => {
+  const leagues = await axiosInstance.get(
+    `https://api.sleeper.app/v1/user/435483482039250944/leagues/nfl/${season}`
+  );
+
+  const league_ids = leagues.data
+    .filter((l: LeagueType) => l.name.startsWith("Ring of Fire: "))
+    .map((l: LeagueType) => l.league_id);
+
+  console.log({
+    [season]: { length: league_ids.length, league_ids },
+  });
 };

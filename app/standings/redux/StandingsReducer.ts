@@ -21,7 +21,7 @@ export type StandingsState = {
 };
 
 const initialState: StandingsState = {
-  season: "2024",
+  season: "2025",
   allplayers: false,
   isLoadingAllplayers: false,
   errorAllplayers: null,
@@ -29,7 +29,7 @@ const initialState: StandingsState = {
   leagues: {},
   errorLeagues: {},
   standings: {
-    "2024": [],
+    "2025": [],
   },
   active: "",
   page: 1,

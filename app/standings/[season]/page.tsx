@@ -61,7 +61,9 @@ const Standings: React.FC<StandingsProps> = ({ params }) => {
         (searched.player.trim() === "" ||
           [...team.starters, ...team.bench, ...team.ir, ...team.taxi].includes(
             searched.player
-          ))
+          )) &&
+        (searched.league.trim() === "" ||
+          team.league.league_id === searched.league)
     )
     .map((team, index) => {
       return {
@@ -140,10 +142,22 @@ const Standings: React.FC<StandingsProps> = ({ params }) => {
     };
   });
 
+  const options_league: {
+    [key: string]: {
+      id: string;
+      text: string;
+    };
+  } = {};
+
   standings_season.forEach((team) => {
     options_manager[team.user_id] = {
       id: team.user_id,
       text: team.username,
+    };
+
+    options_league[team.league.league_id] = {
+      id: team.league.league_id,
+      text: team.league.name.replace("Ring of Fire: ", ""),
     };
   });
 
@@ -157,6 +171,7 @@ const Standings: React.FC<StandingsProps> = ({ params }) => {
           className={Styles.season}
           disabled={isLoadingLeagues}
         >
+          <option>2025</option>
           <option>2024</option>
           <option>2023</option>
           <option>2022</option>
@@ -179,6 +194,12 @@ const Standings: React.FC<StandingsProps> = ({ params }) => {
               options={options_player}
               setSearched={(value) => dispatch(setSearched("player", value))}
               placeholder="Search Players"
+            />
+            <Search
+              searched={searched.league}
+              options={Object.values(options_league)}
+              setSearched={(value) => dispatch(setSearched("league", value))}
+              placeholder="Search Leagues"
             />
           </div>
           <TableMain

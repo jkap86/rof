@@ -7,7 +7,7 @@ const Home: React.FC = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Ring of Fire</h1>
       <div className={styles.nav}>
-        <Link href={"/standings/2024"}>Standings</Link>
+        <Link href={"/standings/2025"}>Standings</Link>
       </div>
     </div>
   );
